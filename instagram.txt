@@ -1,0 +1,52 @@
+!----------------------------------------------------------------!
+! Instagram Content Blocker - Filter List Version                !
+! Replicates the functionality of the provided JavaScript files.   !
+! Compatible with uBlock Origin and AdGuard.                       !
+!----------------------------------------------------------------!
+
+
+! === [Default: ON] Block Reels ===
+! Hides the "Reels" link in the main navigation bar.
+instagram.com##a[href='/reels/']
+! Hides the main content (the video player) on the Reels pages.
+instagram.com##[role=main]:matches-path(/reels/*)
+
+
+! === [Default: ON] Block Explore ===
+! Hides the "Explore" link in the main navigation bar.
+instagram.com##a[href='/explore/']
+! Hides the main content (the grid of posts) on the Explore page.
+instagram.com##[role=main]:matches-path(/explore/*)
+
+
+! === [Default: ON] Block Suggested Followers on Home Feed ===
+! Hides the entire "Suggested for you" container on the right side of the home feed.
+! The :has() selector targets the container based on the "See All" link inside it.
+instagram.com##:is(div,aside):has(a[href='/explore/people/'])
+
+
+! === [Default: ON] Force "Following" Feed (Block "For You" Feed) ===
+! This is a more advanced rule that redirects you from the default "For You"
+! feed to the chronological "Following" feed.
+! It redirects the root URL (/) and the explicit "For You" URL.
+||instagram.com/^$document,redirect=https://www.instagram.com/?variant=following
+||instagram.com/?variant=home$document,redirect=https://www.instagram.com/?variant=following
+
+
+! === [Default: ON] Block Threads ===
+! Hides the "Threads" link in the main navigation bar.
+instagram.com##a[href*='threads.net']
+
+
+! === [Default: OFF] Block Stories ===
+! To enable, remove the "!" from the beginning of the next two lines.
+! Hides the Stories tray at the top of the main feed.
+instagram.com##div[data-pagelet='story_tray']
+! Blocks the dedicated Stories viewer page entirely.
+||instagram.com/stories/*$document
+
+
+! === [Default: OFF] Block Posts on Home Feed ===
+! To enable, remove the "!" from the beginning of the next line.
+! Hides all posts and the loading skeleton from the main feed, leaving only the header/nav.
+instagram.com##main > div > div > div:has(> article), [data-visualcompletion='loading-state']
