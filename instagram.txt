@@ -41,7 +41,7 @@ instagram.com##a[href*='threads.net']
 ! === [Default: OFF] Block Stories ===
 ! To enable, remove the "!" from the beginning of the next two lines.
 ! Hides the Stories tray at the top of the main feed.
-instagram.com##div[data-pagelet='story_tray']
+!instagram.com##div[data-pagelet='story_tray']
 ! Blocks the dedicated Stories viewer page entirely.
 ||instagram.com/stories/*$document
 
@@ -49,4 +49,7 @@ instagram.com##div[data-pagelet='story_tray']
 ! === [Default: OFF] Block Posts on Home Feed ===
 ! To enable, remove the "!" from the beginning of the next line.
 ! Hides all posts and the loading skeleton from the main feed, leaving only the header/nav.
-instagram.com##main > div > div > div:has(> article), [data-visualcompletion='loading-state']
+!instagram.com##main > div > div > div:has(> article), [data-visualcompletion='loading-state']
+
+! Block stories and posts on home feed (block posts is buggy so this is good alternative)
+instagram.com##body:has(div[data-pagelet='story_tray']) [role=main]
