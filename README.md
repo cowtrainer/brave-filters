@@ -1,2 +1,2 @@
-# brave-filters
-Filter lists for brave browser that I find helpful (mostly to stop scrolling)
+# cool-mobile-filters
+Filter lists for mobile websites (I use Brave to block) that save time or annoyances
