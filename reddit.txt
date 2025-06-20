@@ -1,0 +1,3 @@
+!Blocks the feed on any subreddit
+reddit.com##main#main-content > div:not([id])
+reddit.com##shreddit-feed
