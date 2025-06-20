@@ -1,0 +1,6 @@
+! simple filter to filter out most content except messages
+www.instagram.com##[role=main]
+! hide reels link
+instagram.com##a[href='/reels/']
+! hide explore link
+instagram.com##a[href='/explore/']
