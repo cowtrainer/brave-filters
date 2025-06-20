@@ -9,14 +9,14 @@
 ! Hides the "Reels" link in the main navigation bar.
 instagram.com##a[href='/reels/']
 ! Hides the main content (the video player) on the Reels pages.
-instagram.com##[role=main]:matches-path(/reels/*)
+instagram.com/reels/*##[role=main]
 
 
 ! === [Default: ON] Block Explore ===
 ! Hides the "Explore" link in the main navigation bar.
 instagram.com##a[href='/explore/']
 ! Hides the main content (the grid of posts) on the Explore page.
-instagram.com##[role=main]:matches-path(/explore/*)
+instagram.com/explore/*##[role=main]
 
 
 ! === [Default: ON] Block Suggested Followers on Home Feed ===
