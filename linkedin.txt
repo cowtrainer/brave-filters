@@ -1,0 +1,1 @@
+linkedin.com##main > div:has(h1 + div.scaffold-finite-scroll--infinite)
